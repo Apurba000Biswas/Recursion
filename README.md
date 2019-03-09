@@ -29,8 +29,8 @@ Solving a problem using recursion depends on solving smaller occurences of the s
  		
  		hand bowl back to previous persion
 
- 	### Recursive Programming:
- 	Writting function that calls themselvs to solve problems that are recursive in nature
- 	  - An equally powerfull substittute for iteration (loop)
- 	  - Particularly well-suited to solving certain typese of problems
- 	  - Many programming languages("functional" languages such as Scheme, ML, Haskel) use recursion exclusiely(no loops)
+### Recursive Programming:
+Writting function that calls themselvs to solve problems that are recursive in nature
+  - An equally powerfull substittute for iteration (loop)
+  - Particularly well-suited to solving certain typese of problems
+  - Many programming languages("functional" languages such as Scheme, ML, Haskel) use recursion exclusiely(no loops)
