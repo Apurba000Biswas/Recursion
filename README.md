@@ -34,3 +34,7 @@ Writting function that calls themselvs to solve problems that are recursive in n
   - An equally powerfull substittute for iteration (loop)
   - Particularly well-suited to solving certain typese of problems
   - Many programming languages("functional" languages such as Scheme, ML, Haskel) use recursion exclusiely(no loops)
+
+Every recursive algorithm involves atleast 2 cases
+  - base case: (Stop case) A simple occurence that can be answered directly
+  - recursive case: A more complex occurrence of the problem that can not be directly answered.
