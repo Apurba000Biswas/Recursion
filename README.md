@@ -5,5 +5,5 @@ Solving a problem using recursion depends on solving smaller occurences of the s
 #### Example: Double the M&M bowl
 
 <div align="center">
-  <img src ="Image/mnm_candies.png" width ="800">
+  <img src ="Image/mnm_candies.jpg" width ="800">
 </div>
