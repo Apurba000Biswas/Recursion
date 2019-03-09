@@ -40,3 +40,14 @@ Every recursive algorithm involves atleast 2 cases
   - recursive case: A more complex occurrence of the problem that can not be directly answered.
 
 #### Double the M&M bowl Sollution
+
+	private int doubleMnM(int bowl){
+		if(bowl == 0){
+			// base case
+			return 0; // bowl is empty so pass it back
+		}else{
+			// recursive case
+			bowl = doubleMnM(bowl-1); // pick one MnM then pass it to next
+			return bowl + 2; // when bowl comes back put two MnM in it and then pass it back
+		}
+	}
