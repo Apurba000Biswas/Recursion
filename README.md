@@ -53,12 +53,12 @@ Every recursive algorithm involves atleast 2 cases
 	}
 
 #### Simulation
-if we call the method with parameter "4"
+if we call the method with argument "4"
 
 	doubleMnM(4)
 
 <div align="center">
-  <img src ="Image/mnm_simulation.png" width ="800">
+  <img src ="Image/mnm_simulation.png" width ="700">
 </div>
 	
 Final out put will be "8"
