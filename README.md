@@ -14,10 +14,17 @@ Solving a problem using recursion depends on solving smaller occurences of the s
 
 ##### Psudo code:
  doubleMnMs(bowl):
+
  	if bowl is empty:
+
  		hand bowl back to previous persion. (Nothing to do!)
+ 	
  	else
+ 		
  		take One M&M out.
+ 		
  		hand bowl to next persion;tell them to double the M&M in it.
+ 		
  		when they hand the bowl back, put Two M&Ms in it
+ 		
  		hand bowl back to previous persion
