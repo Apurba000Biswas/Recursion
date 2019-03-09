@@ -38,3 +38,5 @@ Writting function that calls themselvs to solve problems that are recursive in n
 Every recursive algorithm involves atleast 2 cases
   - base case: (Stop case) A simple occurence that can be answered directly
   - recursive case: A more complex occurrence of the problem that can not be directly answered.
+
+#### Double the M&M bowl Sollution
