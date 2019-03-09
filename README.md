@@ -51,3 +51,11 @@ Every recursive algorithm involves atleast 2 cases
 			return bowl + 2; // when bowl comes back put two MnM in it and then pass it back
 		}
 	}
+
+#### Simulation
+if we call the method with parameter "4"
+	doubleMnM(4)
+
+<div align="center">
+  <img src ="Image/mnm_simulation.png" width ="800">
+</div>
