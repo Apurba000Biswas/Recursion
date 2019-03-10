@@ -71,4 +71,9 @@ The Towers of Hanoi puzzle asks the player to move a stack of disks from one peg
   - A dsik can not ever sit on a larger disk
 Write a recursive function "moveDiscs" with three parameters
   - Number of disks, start peg, end peg
+
 That moves that many discs from start peg to end peg
+
+<div align="center">
+  <img src ="Image/tower_of_hanoi.png" width ="700">
+</div>
