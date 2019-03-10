@@ -78,15 +78,19 @@ That moves that many discs from start peg to end peg
   <img src ="Image/tower_of_hanoi.png" width ="700">
 </div>
 
-##### Solution:
-
+#### Solution:
+##### Step 1:
 <div align="center">
   <img src ="Image/ts_1.png" width ="700">
 </div>
 
+##### Step 2:
+
 <div align="center">
   <img src ="Image/ts_2.png" width ="700">
 </div>
+
+##### Step 3:
 
 <div align="center">
   <img src ="Image/ts_3.png" width ="700">
