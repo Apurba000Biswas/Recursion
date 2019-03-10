@@ -64,3 +64,11 @@ if we call the method with argument "4"
 Final out put will be "8"
 
 #### [Doubling M&M sollution Link](https://github.com/Apurba000Biswas/Recursion/blob/master/src/practise_set_1/RecursionProb.java)
+
+### Example: Towers of Hanoi
+
+The Towers of Hanoi puzzle asks the player to move a stack of disks from one peg to another, moving one peg at a time
+  - A dsik can not ever sit on a larger disk
+Write a recursive function "moveDiscs" with three parameters
+  - Number of disks, start peg, end peg
+That moves that many discs from start peg to end peg
