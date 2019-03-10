@@ -10,6 +10,9 @@ public class RecursionProb {
 	private void run(){
 		System.out.println("Factorial of 5 : " + factorial(5));
 		System.out.println("Double of 10 MnM in a bowl : " + doubleMnM(10));
+		
+		System.out.println("Moving 5 Discs " );
+		moveDiscs(5, 1, 3);
 	}
 	
 	private int factorial(int n){
@@ -30,6 +33,36 @@ public class RecursionProb {
 			// recursive case
 			bowl = doubleMnM(bowl-1); // pick one MnM then pass it to next
 			return bowl + 2; // when bowl comes back put two MnM in it and then pass it back
+		}
+	}
+	
+	private void moveDiscs(int numOfDiscs, int startPeg, int endPeg){
+		System.out.println("Num of Discs : " + numOfDiscs + " --- Start Peg : " + startPeg + " --- End Peg : " + endPeg);
+		if(numOfDiscs == 0){
+			
+		}else{
+			int thirdPeg = getThirdPeg(startPeg, endPeg);
+			moveDiscs(numOfDiscs-1, startPeg, thirdPeg);
+			moveDiscs(numOfDiscs-1, thirdPeg, endPeg);
+		}
+	}
+	
+	private int getThirdPeg(int startPeg, int endPeg){
+		
+		if(startPeg == 1 && endPeg == 2){
+			return 3;
+		}else if(startPeg == 1 && endPeg == 3){
+			return 2;
+		}else if(startPeg == 2 && endPeg == 1){
+			return 3;
+		}else if(startPeg == 2 && endPeg == 3){
+			return 1;
+		}else if(startPeg == 3 && endPeg == 1){
+			return 2;
+		}else if(startPeg == 3 && endPeg == 2){
+			return 1;
+		}else{
+			return 0;
 		}
 	}
 }
