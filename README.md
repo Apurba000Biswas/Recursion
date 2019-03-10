@@ -97,3 +97,13 @@ That moves that many discs from start peg to end peg
 </div>
 
 ##### [Recursion Sollution Link](https://github.com/Apurba000Biswas/Recursion/blob/master/src/practise_set_1/RecursionProb.java)
+
+Acknowledgement
+-----------------
+
+Stanford(CS-106B) : http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml
+
+Authors
+--------------
+
+[Apurba Biswas](https://github.com/Apurba000Biswas)
