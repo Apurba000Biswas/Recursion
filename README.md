@@ -102,32 +102,33 @@ That moves that many discs from start peg to end peg
 A self- similar mathematical set that can  often be drawn as a reccuring graphical pattern.
 
 ##### Example: 
-1. Sierpinski triangle: 
+
+
+1. CantorSet:
+
+<div align="center">
+  <img src ="Image/fractals_ex_1.gif" width ="800">
+</div>
+
+#### [CantorSet sollution](https://github.com/Apurba000Biswas/fractals/blob/master/src/fract_recursion.cpp)
+
+2. Sierpinski triangle: 
 
 <div align="center">
   <img src ="Image/sierp-det.gif" width ="500">
 </div>
 
-2. Koch snowflake : 
+3. Koch snowflake : 
 
 <div align="center">
   <img src ="Image/koch_snowflake.png" width ="500">
 </div>
 
-3. Mandlebrot set: 
+4. Mandlebrot set: 
 
 <div align="center">
   <img src ="Image/mandle_brot.jpg" width ="500">
 </div>
-
-
-4. CantorSet:
-
-<div align="center">
-  <img src ="Image/fractals_ex_1.gif" width ="500">
-</div>
-
-[CantorSet sollution](https://github.com/Apurba000Biswas/fractals/blob/master/src/fract_recursion.cpp)
 
 Acknowledgement
 -----------------
