@@ -96,7 +96,7 @@ That moves that many discs from start peg to end peg
   <img src ="Image/ts_3.png" width ="700">
 </div>
 
-##### [Recursion Sollution Link](https://github.com/Apurba000Biswas/Recursion/blob/master/src/practise_set_1/RecursionProb.java)
+##### [Towers of Hanoi Sollution Link](https://github.com/Apurba000Biswas/Recursion/blob/master/src/practise_set_1/RecursionProb.java)
 
 ### Fractlas:
 A self- similar mathematical set that can  often be drawn as a reccuring graphical pattern.
@@ -119,6 +119,15 @@ A self- similar mathematical set that can  often be drawn as a reccuring graphic
 <div align="center">
   <img src ="Image/mandle_brot.jpg" width ="500">
 </div>
+
+
+4. CantorSet:
+
+<div align="center">
+  <img src ="Image/fractals_ex_1.gif" width ="500">
+</div>
+
+[CantorSet sollution](https://github.com/Apurba000Biswas/fractals/blob/master/src/fract_recursion.cpp)
 
 Acknowledgement
 -----------------
