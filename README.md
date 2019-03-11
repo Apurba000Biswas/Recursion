@@ -110,18 +110,20 @@ A self- similar mathematical set that can  often be drawn as a reccuring graphic
 1. Sierpinski triangle: 
 
 <div align="center">
-  <img src ="Image/sierp-det.gif" width ="700">
+  <img src ="Image/sierp-det.gif" width ="500">
 </div>
 
 2. Koch snowflake : 
 
 <div align="center">
-  <img src ="Image/koch_snowflake.gif" width ="700">
+  <img src ="Image/koch_snowflake.png" width ="500">
 </div>
 
 3. Mandlebrot set: 
 
-
+<div align="center">
+  <img src ="Image/mandle_brot.jpg" width ="500">
+</div>
 
 
 Authors
