@@ -98,7 +98,7 @@ That moves that many discs from start peg to end peg
 
 ##### [Towers of Hanoi Sollution Link](https://github.com/Apurba000Biswas/Recursion/blob/master/src/practise_set_1/RecursionProb.java)
 
-### Fractals:
+## Fractals:
 A self- similar mathematical set that can  often be drawn as a reccuring graphical pattern.
 
 ##### Example: 
