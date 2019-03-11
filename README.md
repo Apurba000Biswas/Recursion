@@ -103,6 +103,27 @@ Acknowledgement
 
 Stanford(CS-106B) : http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml
 
+### Fractlas:
+A self- similar mathematical set that can  often be drawn as a reccuring graphical pattern.
+
+##### Example: 
+1. Sierpinski triangle: 
+
+<div align="center">
+  <img src ="Image/sierp-det.gif" width ="700">
+</div>
+
+2. Koch snowflake : 
+
+<div align="center">
+  <img src ="Image/koch_snowflake.gif" width ="700">
+</div>
+
+3. Mandlebrot set: 
+
+
+
+
 Authors
 --------------
 
