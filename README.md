@@ -98,11 +98,6 @@ That moves that many discs from start peg to end peg
 
 ##### [Recursion Sollution Link](https://github.com/Apurba000Biswas/Recursion/blob/master/src/practise_set_1/RecursionProb.java)
 
-Acknowledgement
------------------
-
-Stanford(CS-106B) : http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml
-
 ### Fractlas:
 A self- similar mathematical set that can  often be drawn as a reccuring graphical pattern.
 
@@ -125,6 +120,10 @@ A self- similar mathematical set that can  often be drawn as a reccuring graphic
   <img src ="Image/mandle_brot.jpg" width ="500">
 </div>
 
+Acknowledgement
+-----------------
+
+Stanford(CS-106B) : http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml
 
 Authors
 --------------
