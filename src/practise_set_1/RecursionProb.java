@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class RecursionProb {
 	
-	private static final String FILE_NAME = "D:/Project/Recursion/recursion-prereq.txt";
+	private static final String FILE_NAME = "D:/Project/Recursion/cs106b-prereq.txt";
 	
 	public static void main(String[] args){
 		RecursionProb obj = new RecursionProb();
@@ -33,8 +33,7 @@ public class RecursionProb {
 		
 		
 		Map<String, List<String>> courseSeqMap = getCourseSeq();
-		
-		personalCurriculum(courseSeqMap, "explorationRecursion");
+		personalCurriculum(courseSeqMap, "dijkstra");
 	}
 	
 	private Map<String, List<String>> getCourseSeq(){
@@ -74,12 +73,29 @@ public class RecursionProb {
 	}
 	
 	private void personalCurriculum(Map<String, List<String>> courseSeqMap, String goal){
-		Set<String> widnow = new HashSet<>();
-		buildCurriculamMap(courseSeqMap, goal, widnow);
+		Set<String> window = new HashSet<>();
+		if(!courseSeqMap.containsKey(goal)){
+			System.out.println("No Sequence Found");
+		}else{
+			buildCurriculamMap(courseSeqMap, goal, window);
+			System.out.println(goal);
+		}
 	}
 	
-	private void buildCurriculamMap(Map<String, List<String>> courseSeqMap, String goal, Set<String> widnow){
-		
+	private void buildCurriculamMap(Map<String, List<String>> courseSeqMap,
+			String goal, Set<String> window){
+		window.add(goal); // make the goal visited
+		if(courseSeqMap.containsKey(goal)){
+			// recursive case
+			List<String> squences = courseSeqMap.get(goal);
+			for(String currSeq : squences){
+				if(!window.contains(currSeq)){
+					// its not visited before
+					buildCurriculamMap(courseSeqMap, currSeq, window);
+					System.out.println( currSeq);
+				}
+			}
+		}// else base case
 	}
 	
 	
