@@ -11,9 +11,34 @@ public class RecursionProb {
 		System.out.println("Factorial of 5 : " + factorial(5));
 		System.out.println("Double of 10 MnM in a bowl : " + doubleMnM(10));
 		
-		System.out.println("Moving 5 Discs " );
-		moveDiscs(5, 1, 3);
+		//System.out.println("Moving 5 Discs " );
+		//moveDiscs(5, 1, 3);
+		
+		System.out.println("Greates Common Divisor(Ecluids Algorithm) of 42 & 24 : ");
+		int gcd = findGCD(42, 24);
+		System.out.println("GCD Result is: " + gcd);
 	}
+	
+	
+	private int findGCD(int a, int b){
+		return gcd(a, b);
+	}
+	
+	private int gcd(int a, int b){
+		System.out.print("gcd(" + a + ", " + b + ") = " );
+		if(b == 0){
+			// base case
+			System.out.println(a);
+			return a;
+		}else{
+			// recursive case
+			int r = a%b;
+			System.out.println("gcd(" + b + ", " + r + ")" );
+			return gcd(b, r);
+		}
+	}
+	
+	
 	
 	private int factorial(int n){
 		if(n == 0 || n == 1){
