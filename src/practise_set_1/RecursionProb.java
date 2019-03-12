@@ -1,6 +1,19 @@
 package practise_set_1;
 
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
 public class RecursionProb {
+	
+	private static final String FILE_NAME = "D:/Project/Recursion/recursion-prereq.txt";
 	
 	public static void main(String[] args){
 		RecursionProb obj = new RecursionProb();
@@ -16,8 +29,59 @@ public class RecursionProb {
 		
 		System.out.println("Greates Common Divisor(Ecluids Algorithm) of 42 & 24 : ");
 		int gcd = findGCD(42, 24);
-		System.out.println("GCD Result is: " + gcd);
+		System.out.println("GCD Result is: " + gcd + "\n\n");
+		
+		
+		Map<String, List<String>> courseSeqMap = getCourseSeq();
+		
+		personalCurriculum(courseSeqMap, "explorationRecursion");
 	}
+	
+	private Map<String, List<String>> getCourseSeq(){
+		Map<String, List<String>> courseSeqMap = new HashMap<>();
+		Path path = Paths.get(FILE_NAME);
+		try{
+			Scanner scanner = new Scanner(path);
+			while(scanner.hasNextLine()){
+				String line = scanner.nextLine();
+				int keyBreakIndex = line.indexOf(':');
+				String key = line.substring(0,keyBreakIndex);
+				List<String> values = getValues(line.substring(keyBreakIndex+1));
+				courseSeqMap.put(key, values);
+			}
+			scanner.close();
+		}catch(IOException e){
+			System.out.println("??? " + e.getMessage());
+		}
+		return courseSeqMap;
+	}
+	
+	private List<String> getValues(String vStr){
+		List<String> values = new ArrayList<>();
+		StringBuilder strBuilder = new StringBuilder();
+		for(int i=0; i < vStr.length(); i++){
+			char ch = vStr.charAt(i);
+			
+			if(ch == ','){
+				values.add(strBuilder.toString());
+				strBuilder = new StringBuilder();
+			}else{
+				strBuilder.append(ch);
+			}
+		}
+		values.add(strBuilder.toString());
+		return values;
+	}
+	
+	private void personalCurriculum(Map<String, List<String>> courseSeqMap, String goal){
+		Set<String> widnow = new HashSet<>();
+		buildCurriculamMap(courseSeqMap, goal, widnow);
+	}
+	
+	private void buildCurriculamMap(Map<String, List<String>> courseSeqMap, String goal, Set<String> widnow){
+		
+	}
+	
 	
 	
 	private int findGCD(int a, int b){
