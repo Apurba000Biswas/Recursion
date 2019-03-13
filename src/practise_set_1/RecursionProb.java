@@ -1,6 +1,7 @@
 package practise_set_1;
 
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.HashMap;
@@ -13,7 +14,10 @@ import java.util.ArrayList;
 
 public class RecursionProb {
 	
-	private static final String FILE_NAME = "D:/Project/Recursion/cs106b-prereq.txt";
+	private static final String FILE_NAME_PREREQ = "D:/Project/Recursion/cs106b-prereq.txt";
+	private static final String FILE_NAME_GRAMMER = "D:/Project/Recursion/sentence.txt";
+	
+	private Random rand;
 	
 	public static void main(String[] args){
 		RecursionProb obj = new RecursionProb();
@@ -21,32 +25,44 @@ public class RecursionProb {
 	}
 	
 	private void run(){
+		// factorial
 		System.out.println("Factorial of 5 : " + factorial(5));
+		// double M&M
 		System.out.println("Double of 10 MnM in a bowl : " + doubleMnM(10));
 		
+		// Tower of Hanoi
 		//System.out.println("Moving 5 Discs " );
 		//moveDiscs(5, 1, 3);
 		
+		// GCD
 		System.out.println("Greates Common Divisor(Ecluids Algorithm) of 42 & 24 : ");
 		int gcd = findGCD(42, 24);
 		System.out.println("GCD Result is: " + gcd + "\n\n");
 		
-		
-		Map<String, List<String>> courseSeqMap = getCourseSeq();
+		// personal Curriculum
+		Map<String, List<String>> courseSeqMap = getSequences(FILE_NAME_PREREQ ,',');
 		personalCurriculum(courseSeqMap, "dijkstra");
+		
+		// Generate Question
+		System.out.println("\n\nGenerated Question for SENT is: ");
+		Map<String, List<String>> grammerMap = getSequences(FILE_NAME_GRAMMER, '|');
+		rand = new Random(); // make random generator to pick one rule randomly
+		generateQuestion(grammerMap, "SENT");
 	}
 	
-	private Map<String, List<String>> getCourseSeq(){
+	private Map<String, List<String>> getSequences(String fielName ,char valueBreak){
 		Map<String, List<String>> courseSeqMap = new HashMap<>();
-		Path path = Paths.get(FILE_NAME);
+		Path path = Paths.get(fielName);
 		try{
 			Scanner scanner = new Scanner(path);
 			while(scanner.hasNextLine()){
 				String line = scanner.nextLine();
 				int keyBreakIndex = line.indexOf(':');
-				String key = line.substring(0,keyBreakIndex);
-				List<String> values = getValues(line.substring(keyBreakIndex+1));
-				courseSeqMap.put(key, values);
+				if(keyBreakIndex != -1){
+					String key = line.substring(0,keyBreakIndex);
+					List<String> values = getValues(line.substring(keyBreakIndex+1), valueBreak);
+					courseSeqMap.put(key, values);
+				}
 			}
 			scanner.close();
 		}catch(IOException e){
@@ -55,13 +71,13 @@ public class RecursionProb {
 		return courseSeqMap;
 	}
 	
-	private List<String> getValues(String vStr){
+	private List<String> getValues(String vStr, char valueBreak){
 		List<String> values = new ArrayList<>();
 		StringBuilder strBuilder = new StringBuilder();
 		for(int i=0; i < vStr.length(); i++){
 			char ch = vStr.charAt(i);
 			
-			if(ch == ','){
+			if(ch == valueBreak){
 				values.add(strBuilder.toString());
 				strBuilder = new StringBuilder();
 			}else{
@@ -71,6 +87,35 @@ public class RecursionProb {
 		values.add(strBuilder.toString());
 		return values;
 	}
+	
+	
+	private void generateQuestion(Map<String, List<String>> grammer, String symbol){
+		StringBuilder sbQuestion = new StringBuilder();
+		generate(grammer, symbol, sbQuestion);
+		System.out.println(sbQuestion.toString());
+	}
+	
+	private StringBuilder generate(Map<String, List<String>> grammer, 
+			String symbol, StringBuilder sbQuestion){
+		if(!grammer.containsKey(symbol)){
+			// base case - we get our terminal data
+			sbQuestion.append(symbol + " ");
+		}else{
+			// recursive case
+			// get the rules for this symbol
+			List<String> rules = grammer.get(symbol);
+			// randomly pick one rule
+			String randomPickedRule = rules.get(rand.nextInt(rules.size()));
+			// now get individual rules for this random picked rule
+			List<String> individualRules = getValues(randomPickedRule, ' ');
+			for(String currRule : individualRules){
+				generate(grammer, currRule, sbQuestion);
+			}
+		}
+		return sbQuestion;
+	}
+	
+	
 	
 	private void personalCurriculum(Map<String, List<String>> courseSeqMap, String goal){
 		Set<String> window = new HashSet<>();
@@ -100,6 +145,7 @@ public class RecursionProb {
 	
 	
 	
+	
 	private int findGCD(int a, int b){
 		return gcd(a, b);
 	}
@@ -117,6 +163,7 @@ public class RecursionProb {
 			return gcd(b, r);
 		}
 	}
+	
 	
 	
 	
