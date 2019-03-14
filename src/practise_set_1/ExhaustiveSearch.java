@@ -14,13 +14,60 @@ public class ExhaustiveSearch {
 	}
 	
 	private void run(){
+		// Binary
 		System.out.println("printBinary(" + 4 + ")");
 		printBinary(4);
 		
+		// dice roll
 		System.out.println("diceRoll(3,7)");
 		diceRoll(3,7);
 		System.out.println("Toatal Calls : " + calls);
+		
+		// permute List
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		list.add("d");
+		permute(list);
 	}
+	
+	/* [a, b, c, d]
+	 * [a, b, d, c]
+	 * [a, d, b, c]
+	 * ....
+	 * 
+	 */
+	private void permute(List<String> list){
+		List<String> chosen = new ArrayList<>();
+		permuteHelper(list, chosen);
+	}
+	
+	private void permuteHelper(List<String> list, List<String> chosen){
+		if(list.isEmpty()){
+			// base case
+			System.out.println(chosen);
+		}else{
+			for(int i=0; i<list.size(); i++){
+				// choose
+				String str = list.get(i);
+				chosen.add(str);
+				list.remove(i);
+				
+				// explore
+				permuteHelper(list, chosen);
+				
+				// un-choose
+				int lastIndex = chosen.size()-1;
+				chosen.remove(lastIndex);
+				list.add(i,str);
+			}
+		}
+	}
+	
+	
+	
+	
 	/*printBinary(2)
 	 * 00
 	 * 01
@@ -88,4 +135,7 @@ public class ExhaustiveSearch {
 			}
 		}
 	}
+	
+	
+	
 }
