@@ -53,6 +53,14 @@ public class ExhaustiveSearch {
 	
 	
 	
+	/*diceRoll(2,7)
+	 * [1, 6]
+	 * [2, 5]
+	 * [3, 4]
+	 * [4, 3]
+	 * [5, 2]
+	 * [6, 1]
+	 */
 	private void diceRoll(int diceNum, int diceSum){
 		List<Integer> chosen = new ArrayList<>();
 		diceRollHelper(diceNum, diceSum, chosen);
