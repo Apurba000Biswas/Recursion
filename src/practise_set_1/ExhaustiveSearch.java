@@ -6,6 +6,8 @@ import java.util.List;
 public class ExhaustiveSearch {
 	
 	
+	private int calls;
+	
 	public static void main(String[] args){
 		ExhaustiveSearch obj = new ExhaustiveSearch();
 		obj.run();
@@ -17,6 +19,7 @@ public class ExhaustiveSearch {
 		
 		System.out.println("diceRoll(3,7)");
 		diceRoll(3,7);
+		System.out.println("Toatal Calls : " + calls);
 	}
 	/*printBinary(2)
 	 * 00
@@ -46,6 +49,7 @@ public class ExhaustiveSearch {
 			// recursive case
 			String thisOutput = output.toString();
 			printAllBinaryHelper(digits-1, output.append(0));
+			
 			output = new StringBuilder(thisOutput);
 			printAllBinaryHelper(digits-1, output.append(1));
 		}
@@ -67,12 +71,13 @@ public class ExhaustiveSearch {
 	}
 	
 	private void diceRollHelper(int diceNum, int diceSum, List<Integer> chosen){
+		calls ++;
 		if(diceNum == 0){
 			// base case - no dice to roll
 			if(diceSum == 0){
 				System.out.println(chosen);
 			}
-		}else{
+		}else if(diceSum >= diceNum *1 && diceSum <= diceNum*6){
 			// for each rolling 1-6
 			for(int i=1; i<=6; i++){
 				chosen.add(i);
