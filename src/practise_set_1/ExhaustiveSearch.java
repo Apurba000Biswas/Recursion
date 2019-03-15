@@ -24,13 +24,49 @@ public class ExhaustiveSearch {
 		System.out.println("Toatal Calls : " + calls);
 		
 		// permute List
+		System.out.println("Permute - " + "a, b, c, d");
 		List<String> list = new ArrayList<>();
 		list.add("a");
 		list.add("b");
 		list.add("c");
 		list.add("d");
 		permute(list);
+		
+		// sublist
+		System.out.println("Sublist - " + "Jane, Bob, Matt, Sara");
+		List<String> sList = new ArrayList<>();
+		sList.add("Jane");
+		sList.add("Bob");
+		sList.add("Matt");
+		sList.add("Sara");
+		subList(sList);
 	}
+	
+	/* [Jane, Bob, Matt, Sara]
+	 * [Jane, Bob, Matt]
+	 * [Jane, Bob, Sara]
+	 * [Jane, Bob]
+	 * [Jane, Matt]
+	 * [Jane, sara]
+	 * .......
+	 * 
+	 */
+	
+	private void subList(List<String> list){
+		List<String> choosen = new ArrayList<>();
+		subListHelper(list, choosen);
+	}
+	
+	private void subListHelper(List<String> list, List<String> chooen){
+		if(list.isEmpty()){
+			// base case
+		}else{
+			// recursive case
+		}
+	}
+	
+	
+	
 	
 	/* [a, b, c, d]
 	 * [a, b, d, c]
