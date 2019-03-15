@@ -42,11 +42,12 @@ public class ExhaustiveSearch {
 		subList(sList);
 	}
 	
-	/* [Jane, Bob, Matt, Sara]
-	 * [Jane, Bob, Matt]
-	 * [Jane, Bob, Sara]
-	 * [Jane, Bob]
-	 * [Jane, Matt]
+	/* with choosen            -  without choosen
+	 * [Jane, Bob, Matt, Sara] -  [Bob, Matt, Sara]
+	 * [Jane, Bob, Matt]       -  [Bob, Matt]
+	 * [Jane, Bob, Sara]       -  [Bob, Sara]
+	 * [Jane, Bob]			   -  [Bob]
+	 * [Jane, Matt]			   -  []
 	 * [Jane, sara]
 	 * .......
 	 * 
@@ -57,14 +58,30 @@ public class ExhaustiveSearch {
 		subListHelper(list, choosen);
 	}
 	
-	private void subListHelper(List<String> list, List<String> chooen){
+	private void subListHelper(List<String> list, List<String> choosen){
+		//System.out.println("subListHelper(" + list + ", " + choosen + ")");
 		if(list.isEmpty()){
 			// base case
+			// print the choosen
+			System.out.println(choosen);
 		}else{
 			// recursive case
+			String str = list.get(0);
+			list.remove(0); 
+							
+			//choose/explore - try without choose
+			subListHelper(list, choosen); // [Bob, Matt, Sara] - Without "Jane"
+			
+			//choose/explore - try with choose
+			choosen.add(str); // [Jane , Bob, Matt, Sara] - With "Jane"
+			subListHelper(list, choosen);
+			
+			// unchoose
+			list.add(0, str);
+			int lastIndex = choosen.size()-1;
+			choosen.remove(lastIndex);
 		}
 	}
-	
 	
 	
 	
