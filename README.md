@@ -130,7 +130,7 @@ A self- similar mathematical set that can  often be drawn as a reccuring graphic
   <img src ="Image/mandle_brot.jpg" width ="500">
 </div>
 
-### Aplication Using recursion(Boggle)[https://github.com/Apurba000Biswas/Boggle]
+### Aplication Using recursion[Boggle](https://github.com/Apurba000Biswas/Boggle)
 
 Acknowledgement
 -----------------
